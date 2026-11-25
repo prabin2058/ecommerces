@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 
 .env
+
+# Backend runtime files
+backend/public/assets/images/uploads/
+backend/public/assets/images/seed/

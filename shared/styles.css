@@ -1,0 +1,33 @@
+/* Base + component classes shared by both apps (imported after the @tailwind directives). */
+
+@layer base {
+  html { -webkit-tap-highlight-color: transparent; }
+  body { @apply bg-white text-ink antialiased; font-feature-settings: "cv11", "ss01"; }
+  :focus-visible { @apply outline-none ring-2 ring-brand-500 ring-offset-2; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50 whitespace-nowrap; }
+  .btn-primary { @apply btn bg-ink text-white hover:bg-gray-800 active:bg-black; }
+  .btn-brand { @apply btn bg-brand-600 text-white hover:bg-brand-700; }
+  .btn-outline { @apply btn border border-gray-300 bg-white text-ink hover:bg-gray-50; }
+  .btn-ghost { @apply btn text-ink-soft hover:bg-gray-100; }
+  .btn-danger { @apply btn bg-red-600 text-white hover:bg-red-700; }
+  .btn-sm { @apply px-3 py-1.5 text-xs rounded-lg; }
+  .btn-lg { @apply px-6 py-3.5 text-base; }
+  .input { @apply block w-full rounded-xl border border-gray-300 bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-gray-400 shadow-sm transition focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-100 disabled:bg-gray-50; }
+  .input-error { @apply border-red-400 focus:border-red-500 focus:ring-red-100; }
+  .label { @apply mb-1.5 block text-sm font-medium text-ink-soft; }
+  .card { @apply rounded-2xl border border-gray-200 bg-white shadow-card; }
+  .chip { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium; }
+  .link { @apply font-medium text-brand-600 hover:text-brand-700 hover:underline underline-offset-4; }
+  .prose-product p { @apply mb-3 leading-relaxed text-ink-soft; }
+  .prose-product ul { @apply mb-3 list-disc space-y-1 pl-5 text-ink-soft; }
+  .prose-product ol { @apply mb-3 list-decimal space-y-1 pl-5 text-ink-soft; }
+  .prose-product h2, .prose-product h3 { @apply mb-2 mt-4 font-semibold text-ink; }
+  .prose-product a { @apply link; }
+}
+
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { scrollbar-width: none; }
