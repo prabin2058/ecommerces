@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body>
+
+    <header class="py-5 bg-blue-500 flex flex-col sm:flex-row sm:justify-between items-center px-5">
+      <nav>
+        <ul class="flex item-center ">
+          <li><a
+              href="/login"
+              class="text-white hover:text-gray-200 px-3"
+            >Login</a></li>
+          <li><a
+              href="/home"
+              class="text-white hover:text-gray-200"
+            >home</a></li>
+        </ul>
+      </nav>
+      {{#if user}}
+      <p class="text-white">Welcome <span class="font-semibold">{{ user.name}}</span></p>
+      {{/if}}
+    </header>
+    <main>
+
+        <section class="py-5">
+            <div class="container mx-auto">
+              <div class="flex justify-evenly">
+                <div>
+                  <h1 class="text-5xl">Welcome to my <br><p class="text-blue-400 text-7xl"> products </p></h1>
+                </div>
+                <img class="w-1/2" src="images/labtop.png" alt="">
+              </div>
+            </div>
+        </section>
+      <section class="py-5">
+        <p class="text-center">Welcome Admin User</p>
+        <div class="container mx-auto ">
+          <h1 class="text-center font-semibold text-5xl">Products</h1>
+          <div class="px-10 mt-12">
+            <table class="w-full border">
+            <thead class="bg-gray-800">
+                <tr>
+                    <th class="border p-1 text-white">id</th>
+                    <th class="border p-1 text-white">Name</th>
+                    <th class="border p-1 text-white">Brand</th>
+                    <th class="border p-1 text-white">Category</th>
+                    <th class="border p-1 text-white">Price</th>
+                    <th class="border p-1 text-white">createAt</th>
+                    <th class="border p-1 text-white">createdBy</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{#each products}}
+                <tr>
+                    <td class="border text-center p-1">{{id}}</td>
+                    <td class="border text-center p-1">{{name}}</td>
+                    <td class="border text-center p-1">{{brand}}</td>
+                    <td class="border text-center p-1">{{category}}</td>
+                    <td class="border text-center p-1">{{price}}</td>
+                    <td class="border text-center p-1">{{createdAt}}</td>
+                    <td class="border text-center p-1">{{createdBy}}</td>
+
+
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
