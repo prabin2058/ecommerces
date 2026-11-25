@@ -1,0 +1,19 @@
+{
+  "name": "@store/shared",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "UI kit, API client and helpers shared by the store (frontend) and admin (dashboard) apps.",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./tailwind.preset.js": "./tailwind.preset.js",
+    "./styles.css": "./styles.css"
+  },
+  "peerDependencies": {
+    "axios": "^1.7.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1"
+  }
+}
