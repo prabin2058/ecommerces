@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "frontend", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev", "-w", "frontend", "--", "--port", "5173"], "port": 5173 },
+    { "name": "dashboard", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev", "-w", "dashboard", "--", "--port", "5180"], "port": 5180 },
+    { "name": "backend", "runtimeExecutable": "npm", "runtimeArgs": ["run", "start", "-w", "backend"], "port": 5050 },
+    { "name": "backend-alt", "runtimeExecutable": "sh", "runtimeArgs": ["-c", "cd backend && PORT=5051 node -r ./node26-shim.cjs --watch src/app.js"], "port": 5051 },
+    { "name": "frontend-alt", "runtimeExecutable": "sh", "runtimeArgs": ["-c", "VITE_PROXY_TARGET=http://localhost:5051 npm run dev -w frontend -- --port 5175"], "port": 5175 },
+    { "name": "dashboard-alt", "runtimeExecutable": "sh", "runtimeArgs": ["-c", "VITE_PROXY_TARGET=http://localhost:5051 npm run dev -w dashboard -- --port 5181"], "port": 5181 }
+  ]
+}
